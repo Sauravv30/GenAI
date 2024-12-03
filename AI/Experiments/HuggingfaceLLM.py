@@ -1,9 +1,6 @@
 from langchain_huggingface import HuggingFaceEndpoint
 
 repo = "google/gemma-2-2b-it"
-# llm = HuggingFaceEndpoint(repo_id=repo, temperature=0.5,
-#                           huggingfacehub_api_token="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"
-#                           )
 
 llm = HuggingFaceEndpoint(
     repo_id=repo,
