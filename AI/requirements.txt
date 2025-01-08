@@ -28,3 +28,10 @@ accelerate
 pydantic
 requests
 python-multipart
+langgraph
+IPython
+phidata
+yfinance
+googlesearch-python
+pycountry
+openai

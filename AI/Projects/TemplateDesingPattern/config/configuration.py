@@ -9,6 +9,6 @@ class Configuration(BaseConfig):
         super().__init__(path)
 
     def load(self):
-        load_dotenv()
+        load_dotenv(dotenv_path="../.env")
         os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
         os.environ["HF_TOKEN"] = os.getenv("HF_TOKEN")

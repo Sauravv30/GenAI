@@ -5,14 +5,14 @@ from langchain_groq import ChatGroq
 
 from constants import app_constants
 from langchain_ollama import OllamaLLM
-
+import os
 wiki_wrapper = WikipediaAPIWrapper(top_k_results=1, doc_content_chars_max=500)
 
 # Run query to outside world
 wiki = WikipediaQueryRun(api_wrapper=wiki_wrapper)
 # llm = OllamaLLM(model="llama3.2")
-llm = ChatGroq(model=app_constants.LLM_MODEL, temperature=0.5, max_tokens=100
-               )
+llm = ChatGroq(model=app_constants.LLM_MODEL, temperature=0.5, max_tokens=100,
+               api_key=os.getenv("GROQ_API_KEY"))
 
 
 def llm_search_tool(query):
