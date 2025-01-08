@@ -17,7 +17,7 @@ web_search_agent = Agent(name="Websearch",
                          markdown=True,
                          model=model,
                          tools=[GoogleSearch(fixed_max_results=2), DuckDuckGo(fixed_max_results=2)],
-                         show_tool_calls=True,
+                         # show_tool_calls=True,
                          description="You are a stocks expert who can search from web for analysis "
                                      "You can find the best possible results that recommend to analyse about the stock.",
                          instructions=[
@@ -32,7 +32,7 @@ fundamental_analysis_agent = Agent(name="Fundamental Analysis Agent",
                                                         stock_price=True,
                                                         company_info=True, stock_fundamentals=True),
                                           GoogleSearch(fixed_max_results=2)],
-                                   show_tool_calls=True,
+                                   # show_tool_calls=True,
                                    description="You are expert in stocks and your goal is to research on Fundamental "
                                                "analysis of given stock, try to fetch precise and brief details",
                                    instructions=[
@@ -49,8 +49,9 @@ market_research_agent = Agent(name="Market Trends Agent",
                               model=model,
                               tools=[YFinanceTools(company_news=True, historical_prices=True),
                                      GoogleSearch(fixed_max_results=2)],
-                              show_tool_calls=True,
-                              description="You are expert in stocks to research on market trends for given stock, try to fetch precise and brief details",
+                              # show_tool_calls=True,
+                              description="You are expert in stocks to research on market trends for given stock, "
+                                          "try to fetch precise and brief details",
                               instructions=[
                                   "Analyze industry trends and competitive landscape."
                                   "Identify any macroeconomic factors or news influencing the company or its sector.",
@@ -63,7 +64,7 @@ technical_analysis_agent = Agent(name="Technical Analysis Agent",
                                  model=model,
                                  tools=[YFinanceTools(technical_indicators=True, analyst_recommendations=True,
                                                       historical_prices=True), GoogleSearch(fixed_max_results=2)],
-                                 show_tool_calls=True,
+                                 # show_tool_calls=True,
                                  description="You are expert in stocks to research on technical analysis for given "
                                              "stock, try to fetch precise and brief details",
                                  instructions=[
@@ -79,7 +80,7 @@ sentiment_analysis_agent = Agent(name="Sentiment Analysis Agent",
                                  tools=[YFinanceTools(historical_prices=True, technical_indicators=True,
                                                       analyst_recommendations=True),
                                         GoogleSearch(fixed_max_results=2)],
-                                 show_tool_calls=True,
+                                 # show_tool_calls=True,
                                  description="You are expert in stocks to research on sentiment analysis for given "
                                              "stock, try to fetch precise and brief details",
                                  instructions=[
@@ -96,7 +97,7 @@ risk_assessment_agent = Agent(name="Sentiment Analysis Agent",
                                                    historical_prices=True,
                                                    stock_price=True),
                                      GoogleSearch(fixed_max_results=2)],
-                              show_tool_calls=True,
+                              # show_tool_calls=True,
                               description="You are expert in stocks to research on risk assessment for given "
                                           "stock, try to fetch precise and brief details",
                               instructions=[
@@ -118,10 +119,9 @@ stock_advisor = Agent(
 
     instructions=["You use multiple agents to calculate the results based on Financial Analyst, "
                   "Market Trends, Technical Analysis, Sentiment Analysis, Risk Assessment. Take a "
-                  "brief analysis results and calculate. Please provide the answers in layman language and use markdown"
-                  "in your output "
-                  "for better readability"],
-    show_tool_calls=True,
+                  "brief analysis results and calculate. Please provide the output very precise and in layman language "
+                  "and use markdown only for better readability"],
+    # show_tool_calls=True,
     markdown=True,
     storage=SqlAgentStorage(table_name="agent_sessions", db_file="tmp/agent_storage.db"),
     # session_name="default"
