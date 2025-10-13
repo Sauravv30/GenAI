@@ -15,10 +15,10 @@
 - Setup completion and jbook integration with Groq
 
 ### Agents and Agentic Patters
-** What is Agent ?
+**What is Agent ?
 - AI Agents are programs where LLM outputs control the workflows.
 
-** Below describes an AI Solutions
+**Below describes an AI Solutions
 - Where Mulitple LLM calls happens.
 - LLMs with ability to use tools.
 - An environment where LLMs interacts each others.
@@ -26,7 +26,7 @@
 - Autonomy (Giving decision making power)
 
 ### Agentic Systems
-** Two types of catergories
+**Two types of catergories
 - Workflows are systems where LLMs and tools are orchestrated through predefined code paths.
 - Agents are systems where LLMs dynamically direct their own processes and tools usage, maintaining control over how they accomplish tasks.
 
