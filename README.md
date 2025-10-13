@@ -1,10 +1,8 @@
-# GenAI
-## Agentic Chapter 2
+## Agentic Details
 
 ## Environment
 
 - Clone git repo 
-``https://github.com/ed-donner/agents``
 - Install Cursor for windows
 - Install UV for python, It's a package manager. After install go to root repo and do
 ``uv sync``
